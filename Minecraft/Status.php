@@ -26,7 +26,7 @@ class Status
 
 		// 필수 패킷 전송 후 소켓 종료
 		fwrite($socket, "\xfe\x01");
-    	$data = fread($socket, 1024); 
+		$data = fread($socket, 1024); 
 		fclose($socket);
 
 		// 상태가 이상한 서버일 경우
