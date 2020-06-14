@@ -37,7 +37,7 @@ class Status
 
 		// 수신한 패킷을 각 요소별로 분리
 		$data = substr($data, 9);
-		$data = mb_convert_encoding($data, 'auto', 'UCS-2');
+		$data = iconv('UTF-16BE', 'UTF-8', $data);
 		$data = explode("\x00", $data);
 
 		// 객체에 값 대입
